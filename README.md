@@ -1,3 +1,9 @@
+# Note
+
+This repo is forked from [docker_app_lifecycle](https://github.com/cloudfoundry-incubator/docker_app_lifecycle) with commit `e33bd00aeb2053d5100abce7fa4485c4d0a5773a`.
+
+- Support Multiple insecure Registry
+
 # docker_app_lifecycle
 
 The docker app lifecycle implements a Docker deployment strategy for Cloud

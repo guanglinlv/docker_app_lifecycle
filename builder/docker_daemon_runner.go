@@ -38,10 +38,14 @@ func launchDockerDaemon(daemonPath string, insecureDockerRegistriesList []string
 	chanError := make(chan error, 1)
 
 	args := DockerArgs
-	if len(insecureDockerRegistriesList) > 0 {
-		args = append(args, "--insecure-registry="+strings.Join(insecureDockerRegistriesList, ","))
+	//if len(insecureDockerRegistriesList) > 0 {
+	//	args = append(args, "--insecure-registry="+strings.Join(insecureDockerRegistriesList, ","))
+	//}
+	// multi insecure registry
+	for _, registry := range insecureDockerRegistriesList {
+		args = append(args, "--insecure-registry="+registry)
 	}
-
+	
 	cmd := exec.Command(daemonPath, args...)
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
